@@ -1,0 +1,183 @@
+/* 한국어 폰트 최적화 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 테이블 스타일링 */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #495057;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* 강조 박스 */
+blockquote {
+    background-color: #e7f3ff;
+    border-left: 4px solid #2196F3;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 코드 블록 */
+pre {
+    background-color: #f4f4f4;
+    border-radius: 4px;
+    padding: 15px;
+    overflow-x: auto;
+}
+
+code {
+    background-color: #f4f4f4;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 0.9em;
+}
+
+/* 이모지 헤더 스타일 */
+h1, h2, h3 {
+    color: #2c3e50;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+h2 {
+    border-bottom: 1px solid #bdc3c7;
+    padding-bottom: 5px;
+}
+
+/* 링크 스타일 */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* 진행률 바 스타일 */
+.progress-bar {
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    padding: 3px;
+    margin: 10px 0;
+}
+
+.progress {
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    height: 20px;
+    border-radius: 7px;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+/* 상태 배지 */
+.status-complete {
+    background-color: #27ae60;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 0.8em;
+}
+
+.status-planned {
+    background-color: #f39c12;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 0.8em;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
+        margin: 0;
+    }
+    
+    table {
+        font-size: 12px;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    th, td {
+        padding: 8px;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    h2 {
+        font-size: 1.3em;
+    }
+    
+    blockquote {
+        margin: 10px 0;
+        padding: 10px 15px;
+    }
+    
+    pre {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+
+/* 다크모드 지원 (선택사항) */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+    }
+    
+    th {
+        background-color: #34495e;
+        color: #ecf0f1;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #34495e;
+    }
+    
+    blockquote {
+        background-color: #34495e;
+        border-left-color: #3498db;
+    }
+    
+    pre, code {
+        background-color: #34495e;
+        color: #ecf0f1;
+    }
+}

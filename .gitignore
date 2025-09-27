@@ -1,1 +1,22 @@
- 
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Mac
+.DS_Store
+
+# 임시 파일
+*.tmp
+*.temp
+~*
+
+# 에디터
+.vscode/
+*.swp
+*.swo
+
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata 
