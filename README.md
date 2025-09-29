@@ -1,6 +1,6 @@
 # 📚 2025년 2학기 전공 필기본
 
-cd "C:\Users\User\Desktop\필기\Notes"
+cd "C:\Users\User\Desktop\Notes"
 git add .
 git status # 확인
 git commit -m "📝 [과목] [단원] 필기 추가" # 의미있는 메시지
@@ -19,7 +19,7 @@ git push origin main
 git commit --allow-empty -m "🔄 Pages 재빌드"
 git push origin main
 
-cd "C:\Users\User\Desktop\필기\Notes"
+cd "C:\Users\User\Desktop\Notes"
 git init
 git add .
 git commit -m "📚 초기 커밋"
