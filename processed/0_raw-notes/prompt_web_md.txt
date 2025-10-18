@@ -1,0 +1,26 @@
+You are given a series of class note texts, which include specific commands, code snippets, and conceptual explanations often presented within PDF or image content.
+Your task is to automatically analyze ALL provided notes and extract only the content that represents **high-value, fill-in-the-blank candidates** for an exam, such as:
+1. Exact commands or arguments (e.g., 'npm run deploy').
+2. Specific code library/package names (e.g., 'vite@list').
+3. Core technical terms or conceptual pillars (often highlighted visually in the source).
+
+RULES:
+1. **Output ONLY the final structured extraction** (no extra explanation, no comments, no surrounding text).
+2. **Format:** Use a single, structured Markdown list designed for memorization.
+3. **Hierarchy & Structure:**
+    - Top-level headings (H2): Major Topics/Themes.
+    - Second-level headings (H3): Specific Commands/Code Focus or Conceptual Pillars.
+    - List Items: Each item must be presented as a KEYWORD-DEFINITION/CONTEXT pair, structured as **`[Contextual Phrase/Code Description]`** -> **`[The Exact Keyword/Blank Answer]`**.
+4. **Keyword Emphasis:** Commands, library names, file extensions, and critical technical terms must be enclosed in **backticks (` `)** to simulate code/command blocks.
+5. **Completeness:** Ensure that all previously identified and newly mentioned high-value items (HTTP methods, Session/Cookie terms, `npm run deploy`, `vite@list`, etc.) are included.
+6. **Clarity:** Keep the context concise but sufficient to recall the required keyword.
+
+OUTPUT FORMAT:
+## [Major Topic 1: Course/Subject Name]
+### [Subtopic: Command/Code Focus]
+- 명령어 실행: 배포 (Deployment) -> **`npm run deploy`**
+- 프로젝트 생성 도구 이름 -> **`vite@list`**
+### [Subtopic: Conceptual Pillars]
+- 웹 상태 유지를 위한 클라이언트 저장소 -> **`쿠키(Cookie)`**
+
+[Start the final output with the first H2 heading]:
