@@ -1,0 +1,95 @@
+요약형 답. (단답/주관식 스타일)
+
+# 출제 가능 “탐색 트리 표 작도” 리스트(우선순위↓)
+
+1. A* vs Greedy (최단경로 A→M)
+
+* 표 채우기: 단계, 확장노드, fringe(정렬키), g, h, f, 선택, 경로.
+* 핵심: f=g+h(A*), f=h(Greedy), h(n) 표 제공 시 과소추정(admissible) 가정.
+* 힌트: “goal은 꺼냈을 때(pop) 종료” 원칙, 동점 tie-break 명시.
+* 근거: Informed Search·h(n)·Greedy·A* 도입과 A→M 적용 예시가 슬라이드에 그대로 존재.   
+
+2. Uniform Cost Search(UCS) (A→M)
+
+* 표: 단계, 확장, fringe(우선순위큐; g 오름차순), 선택, 누적거리.
+* 힌트: 최적해 보장, 단 depth 최적은 아님. goal pop 시 종료.
+* 근거: Uninformed 목록·성능 요약.  
+
+3. Breadth-First Search(BFS) (A→M)
+
+* 표: 단계, 확장, 큐 상태(좌=front), 깊이, 선택.
+* 힌트: 깊이 최적(거리 최적X).
+* 근거: BFS 확장 순서/정의.  
+
+4. Iterative Deepening Search(IDS) (A→M)
+
+* 표: limit=0,1,2,3… 각 라운드의 “방문/확장 순서 요약”, 마지막 라운드의 해 경로.
+* 힌트: BFS의 완전성+DFS 메모리, 중복비용≈+10% 직관.
+* 근거: 정의/장점 요약. 
+
+5. Depth-Limited Search(DLS) (A→M, 예: limit=4)
+
+* 표: 단계, 스택상태, 깊이, cut-off 여부.
+* 힌트: limit≥해깊이 필요, 최적X.
+* 근거: 정의/평가 요약. 
+
+6. Depth-First Search(DFS) 추적 (A→M)
+
+* 표: 단계, 확장, 스택, 백트래킹 지점.
+* 힌트: 무한루프 주의(재방문 차단), 최적X.
+* 근거: 적용 예·성능.  
+
+7. 8-puzzle: A*(h1=misplaced, h2=Manhattan) 2~4스텝 표
+
+* 표: 단계, 보드, g, h1/h2, f, fringe 정렬, 선택.
+* 힌트: h2≥h1, 둘 다 admissible 가정.
+* 근거: h(n) 소개(8-puzzle), A*.  
+
+8. 8-queens(소규모 n=4) 백트래킹 트리 스냅샷
+
+* 표: 열(column)별 배치 시도, 가지치기 사유(행/대각 위반), 스택.
+* 힌트: 제약 위반 즉시 prune.
+* 근거: n-queens 모델링 파트 존재(트리로도 출제 가능성 낮지만 대비). 
+
+(참고) 과목 소개에 적시된 전체 문제군(8/ N-puzzle, 8/ N-queens, 최단경로, TSP, 배낭, 집합커버링 등) 중 “Tree Search 강의”에서 바로 표 작도형으로 가장 자연스러운 건 1~6, 7(축약), 8(축약)입니다. TSP·배낭·집합커버링은 본 강의에선 “모델링/정의” 중심이라 순수 트리 작도 출제 우선순위 낮음. 
+
+---
+
+# 표 헤더 템플릿(그대로 외워가기)
+
+* 공통: 단계 | 확장노드 | fringe(정렬키) | g | h | f | 선택 | 현재경로/깊이 | 비고(재방문/타이).
+* BFS: 정렬키=깊이(큐). UCS: 정렬키=g. Greedy: 정렬키=h. A*: 정렬키=f=g+h. DFS/DLS/IDS: 스택/limit 명시.  
+
+---
+
+# 채점 포인트(단답 체크리스트)
+
+T/F
+
+* (T) goal은 “발견 시”가 아니라 “fringe에서 꺼냈을 때(pop)” 종료(UCS/A*/Greedy).
+* (T) BFS는 깊이 최적, 거리 최적은 아님.
+* (T) UCS는 비용 최적 보장(양의 간선, monotone 조건).
+* (T) A*는 h가 과소추정(admissible)이면 최적 보장.
+* (F) Greedy는 최적 보장.
+* (F) DFS는 항상 완전.
+* (T) IDS는 완전(BFS 수준) + 메모리 DFS 수준.
+  근거 요약: 알고리즘 요약/평가 표. 
+
+---
+
+# 우선순위별 막판 암기 키워드(단답)
+
+* 1위 A*: f=g+h, admissible, goal pop. 
+* 2위 Greedy: f=h, 빠르나 최적X. 
+* 3위 UCS: g 최소, PQ, 최적O. 
+* 4위 BFS: 큐, 깊이고정 탐색. 
+* 5~6위 DFS/DLS/IDS: 스택/limit/반복증가. 
+
+---
+
+# 보너스(낮은 우선순위 대비)
+
+* 8-puzzle **inversion**(해 존재성만 확인 표기; 트리 작도와 별개):
+  홀수 n ⇒ inversion 짝수여야 solvable / 짝수 n ⇒ 규칙 달라짐(공백행 포함). 
+
+원하시면 각 항목별 “실제 표 채움 예시(1~2스텝)”를 바로 써드릴게요.
